@@ -14,7 +14,8 @@ public class PremiseController extends BaseController {
     @Autowired
     PremiseService premiseService;
 
-    @RequestMapping(value = "{apiKey}/address/uk/{query}", method = RequestMethod.GET)
+    //TODO Change this request mapping route
+    @RequestMapping(value = "{apiKey}/address/uk/{query}")
     public PremiseResponse[] findAddress(@PathVariable String apiKey, @PathVariable String query, @RequestParam Map<String, String> mapParams) {
 
         return premiseService.findAdresses(apiKey, query, null);
