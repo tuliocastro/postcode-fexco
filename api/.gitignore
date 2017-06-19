@@ -1,0 +1,16 @@
+*.iml
+*.ipr
+*.iws
+.idea
+.idea/
+/lib
+/logs
+resources/modules/*.jar
+/target
+/tmp
+/dist
+bower_components/
+build/
+node_modules/
+app/node_modules/
+npm-debug*
