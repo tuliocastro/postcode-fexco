@@ -43,31 +43,11 @@
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
 
-        <!-- Cache dependencies -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-cache</artifactId>
-        </dependency>
-
-        <!-- JSR 107 cache - Caffeine Implement -->
-        <!--<dependency>-->
-            <!--<groupId>com.github.ben-manes.caffeine</groupId>-->
-            <!--<artifactId>caffeine</artifactId>-->
-        <!--</dependency>-->
-
         <!-- Redis Implement -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
-
-        <!-- Redis Embedded Server -->
-        <dependency>
-            <groupId>com.github.kstyrc</groupId>
-            <artifactId>embedded-redis</artifactId>
-            <version>0.6</version>
-        </dependency>
-
 
     </dependencies>
 
