@@ -9,6 +9,10 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 @Component
 public class PremiseService {
 
@@ -20,13 +24,18 @@ public class PremiseService {
     @Cacheable("uk_address")
     public PremiseResponse[] findAdresses(String apiKey, String query, PremiseRequest premiseRequest) {
 
-        logger.debug("Finding address...");
+        logger.info("Finding address...");
 
         RestTemplate restTemplate = new RestTemplate();
 
         String url = PostCoderEndpoint.BASE + apiKey + PostCoderEndpoint.UK.ADDRESS + query;
 
-        PremiseResponse[] response = restTemplate.getForObject(url, PremiseResponse[].class, premiseRequest);
+//        PremiseResponse[] response = restTemplate.getForObject(url, PremiseResponse[].class, premiseRequest);
+
+        PremiseResponse mock = new PremiseResponse();
+        mock.buildingname = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date());
+
+        PremiseResponse[] response = new PremiseResponse[]{mock};
 
         return response;
     }
