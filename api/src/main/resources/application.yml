@@ -1,4 +1,4 @@
-spring:
+cache:
   redis:
-    host: localhost
+    hostname: 127.0.0.1
     port: 6379
