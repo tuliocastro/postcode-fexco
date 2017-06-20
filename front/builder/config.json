@@ -1,0 +1,30 @@
+{
+  "project": {
+    "name": "postcoder"
+  },
+  "src": {
+    "vendor": "node_modules/",
+    "view": "src/view/",
+    "js": "src/js/",
+    "style": "src/sass/",
+    "img": "src/img/",
+    "font": "src/fonts/",
+    "build": "www/"
+  },
+  "deps": {
+    "css": [
+      "angular/angular-csp.css",
+      "bootstrap/dist/css/bootstrap.css",
+      "font-awesome/css/font-awesome.css"
+    ],
+    "js": [
+      "angular/angular.js",
+      "angular-ui-router/release/angular-ui-router.js",
+      "angular-local-storage/dist/angular-local-storage.js"
+    ],
+    "fonts": [
+      "font-awesome/fonts/*"
+    ],
+    "offlibs": []
+  }
+}

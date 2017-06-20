@@ -1,6 +1,5 @@
 package com.fexco.postcode.controller;
 
-import com.fexco.postcode.base.controller.BaseController;
 import com.fexco.postcode.service.EircodeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-public class EircodeController extends BaseController {
+public class EircodeController {
 
     @Autowired
     EircodeService eircodeService;

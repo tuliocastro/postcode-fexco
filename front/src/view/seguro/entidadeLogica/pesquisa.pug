@@ -1,0 +1,135 @@
+.page-header
+
+    .container-fluid
+
+        .row
+
+            .col-xs-6
+
+                label.title Pesquisar dados
+
+            .col-xs-6.text-right
+
+                button.btn.btn-default(ng-click="ctrl.fazerCarga()") Carga
+
+
+.container
+
+    .row
+
+        .panel.panel-folder
+
+            .panel-heading
+
+                .panel-title Filtro
+
+
+            form.panel-body(ng-submit="ctrl.filtrar()")
+
+                fieldset
+
+                    legend Preencha a pesquisa abaixo
+
+                    .row
+
+                        .form-group.col-sm-3
+
+                            label Entidade
+                            select.form-control(ng-model="ctrl.filtro.entidadeLogica" aria-label="Entidade Lógica" ng-options="entidadeLogica as entidadeLogica.nome for entidadeLogica in ctrl.entidadesLogicas" ng-required="true" ng-change="ctrl.limparResultado()")
+                                option(value="" selected="selected" disabled="true") Selecione uma entidade: &nbsp;
+
+                        .form-group.col-sm-3
+
+                            label Campo
+                            input.form-control.col-xs-3(type="text" ng-model="ctrl.filtro.atributo" placeholder="Ex: numero ou empresa.nome")
+
+                        .form-group.col-sm-3
+
+                            label Operação
+                            select.form-control.col-xs-3(ng-model="ctrl.filtro.operador" aria-label="Operador" ng-options="operador as operador.descricao for operador in ctrl.operadores")
+                                option(value="" selected="selected" disabled="true") Selecione o Operador: &nbsp;
+
+                        .form-group.col-sm-3
+
+                            label Valor
+                            input.form-control.col-xs-3(type="text" ng-model="ctrl.filtro.valor" placeholder="Valor desejado.")
+
+
+                    .row.buttons
+
+                        .col-xs-12.text-right
+
+                            button.btn.btn-primary(type="submit")
+                                i.fa.fa-search
+                                span Pesquisar
+
+
+
+    .row(ng-if="ctrl.resultados && ctrl.resultados.length > 0")
+
+        .panel
+
+            .panel-heading
+
+                .panel-title
+                    h4 Resultados para entidade:
+                        b.captalize  {{ctrl.filtro.entidadeLogica.nome}}
+
+            .panel-body.table-responsive
+
+                table.table
+
+                    thead
+
+                        tr
+                            th(ng-repeat="campo in ctrl.filtro.entidadeLogica.campos track by $index")
+
+                                | {{campo.nome}}
+
+                            th(ng-repeat="entidade in ctrl.filtro.entidadeLogica.entidades track by $index")
+
+                                | {{entidade.nome}}
+
+                    tbody
+
+                        tr(ng-repeat="resultado in ctrl.resultados track by $index")
+
+                            td(ng-repeat="campo in ctrl.filtro.entidadeLogica.campos track by $index")
+
+                                | {{resultado[campo.nome]}}
+
+                            td
+
+                                ol(ng-repeat="entidade in ctrl.filtro.entidadeLogica.entidades track by $index")
+
+                                    li(ng-repeat="registroEntidade in resultado[entidade.nome]")
+
+                                        a(href="javascript:void(0)" ng-click="ctrl.detalharEntidade(registroEntidade)")
+
+                                            //span {{'#'+$index}} &nbsp;
+                                            span(ng-repeat="(key, value) in registroEntidade" ng-if="key != 'token'")
+                                                b {{key}}: &nbsp;
+                                                span {{value}}, &nbsp;
+
+
+    .row(ng-if="ctrl.resultados.length == 0")
+
+        .panel.panel-default
+
+            .panel-body
+
+                .alert.alert-warning.marginless
+
+                    | Nenhum resultado encontrado para a pesquisa realizada.
+
+
+
+
+
+
+
+
+
+
+
+

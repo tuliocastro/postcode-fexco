@@ -1,0 +1,12 @@
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+.input-group-btn .caret {
+  margin-left: 5px;
+}
+
+textarea.form-control {
+  resize: none;
+}
