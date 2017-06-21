@@ -43,6 +43,13 @@
   @include justify-content(center)
 }
 
+.flex-right {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(flex-end);
+  @include justify-content(flex-end)
+}
+
 .flex-row {
 
   @include display-flex;

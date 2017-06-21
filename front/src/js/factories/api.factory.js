@@ -3,12 +3,12 @@
 
     angular.module(CONSTANTS.APP).factory('API', Factory);
 
-    function Factory(GlobalConstantes, $http, $httpParamSerializerJQLike) {
+    function Factory(GlobalConstants, $http, $httpParamSerializerJQLike) {
 
         var DEFAULT_OPTS = {loading: true};
 
         function buildURL(url) {
-            return GlobalConstantes.API_BASE_ENDPOINT + '/' + url;
+            return GlobalConstants.API_BASE_ENDPOINT + '/' + url;
         }
 
         return {

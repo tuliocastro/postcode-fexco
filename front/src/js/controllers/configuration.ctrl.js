@@ -2,24 +2,31 @@
 
     angular.module(CONSTANTS.APP).controller('ConfigurationCtrl', Controller);
 
-    function Controller($state, ConfigurationSession) {
+    function Controller($state, APIKeySession) {
 
-        const INITIAL_ROUTE = "ie.address.list";
+        const INITIAL_ROUTE = "ie.address";
 
         var ctrl = this;
-        ctrl.pcw = ConfigurationSession.get() || '';
 
-        ctrl.enter = enter;
+        ctrl.apiKey = APIKeySession.get() || '';
+
+        ctrl.save = save;
+        ctrl.cancel = cancel;
 
         /**
          * Functions
          */
-        function enter() {
+        function save() {
 
-            ConfigurationSession.storage(ctrl.pcw);
+            APIKeySession.store(ctrl.apiKey);
 
             $state.go(INITIAL_ROUTE);
 
+        }
+
+        function cancel() {
+
+            delete ctrl.apiKey;
         }
 
     }

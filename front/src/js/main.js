@@ -8,8 +8,8 @@
 
     angular.module(CONSTANTS.APP, [
         'ui.router',
-        'LocalStorageModule'
-
+        'LocalStorageModule',
+        'sticky'
     ]);
 
     angular.module(CONSTANTS.APP).config(function ($urlRouterProvider, $httpProvider) {

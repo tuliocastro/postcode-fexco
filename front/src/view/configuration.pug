@@ -1,1 +1,24 @@
-h1 Config.
+h1 Configuration
+
+.full-height
+
+    .flex-centered
+
+        form.panel.panel-box(ng-submit="ctrl.save()")
+
+            .panel-heading
+
+                .panel-title Please type your PCW API Key:
+
+            .panel-body
+
+                .input-group
+
+                    input.form-control(ng-model="ctrl.apiKey")
+
+            .panel-footer
+
+                button.btn.btn-default(type="button" ng-click="ctrl.cancel()") Cancel
+
+                button.btn.btn-primary(type="submit") Save
+

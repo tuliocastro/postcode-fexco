@@ -4,6 +4,7 @@ import com.fexco.postcode.constant.PostCoderEndpoint;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -19,7 +20,7 @@ public class PremiseService {
     //TODO Try catch
     //TODO Test cache
     //TODO Melhorar a recuperacao de URL
-    @Cacheable("uk_address")
+    @Cacheable(value = "uk_address", key = "{#query, #params}")
     public String findAdresses(String apiKey, String query, Map<String, String> params) {
 
         String url = PostCoderEndpoint.BASE + apiKey + PostCoderEndpoint.UK.ADDRESS + query;

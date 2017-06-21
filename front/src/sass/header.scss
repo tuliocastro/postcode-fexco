@@ -1,7 +1,43 @@
+@import "colors", "base/mixins";
+
 #header {
 
+  background: $bgHeader;
+  border: none;
+  border-top: 4px solid rgba(#000, .2);
+  color: $fgHeader;
+
+  a {
+    color: rgba($fgHeader, .7);
+  }
+
+  a:hover, a:focus, a:visited {
+    background: rgba(#000, .2);
+    color: rgba($fgHeader, 1);
+  }
+
+  /* Menu Links */
   .menu {
 
+    &, a {
+
+      .caption {
+        font-size: 10px;
+        background-color: $fgHeader;
+        color: $bgHeader;
+        padding: 3px 5px;
+        @include border-radius(7px);
+      }
+
+      .caption ~ span {
+        display: block;
+      }
+    }
+
+    a.active, .active a {
+      border-bottom: 3px solid $fgHeader;
+      color: rgba($fgHeader, 1);
+    }
   }
 
 }

@@ -2,4 +2,11 @@
 
 body {
   background-color: $bgBody;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.navbar-fixed-top ~ #page-wrapper {
+  margin-top: 80px;
 }

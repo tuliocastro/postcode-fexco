@@ -17,29 +17,54 @@ html(ng-app="app")
 
     body(ng-cloak="")
 
-        nav.navbar.navbar-fixed-top.navbar-blue
+        nav#header.navbar.navbar-fixed-top
 
             .container-fluid
 
-                .row
+                .row.flex-row.flex-centered
 
                     .col-sm-3
 
                         .navbar-brand PostCoder-Search
 
-                    .col-sm-6
+                    .col-sm-6.flex-row.flex-centered
 
-                        ul.menu.nav.navbar-nav
+                        ul.menu.nav.navbar-nav.text-center
 
                             li
-                                a(href="javascript:void(0)" ) IE Address
+                                a(href="javascript:void(0)" ui-sref="ie.address")
+                                    span.caption IE
+                                    span Address
 
-                    .col-sm-3
+                            li
+                                a(href="javascript:void(0)" )
+                                    span.caption IE
+                                    span Address GEO
+
+
+                            li
+                                a(href="javascript:void(0)" )
+                                    span.caption IE
+                                    span Position
+
+                            li
+                                a(href="javascript:void(0)" )
+                                    span.caption IE
+                                    span Reverse GEO
+
+                            li
+                                a(href="javascript:void(0)" )
+                                    span.caption UK
+                                    span Address
+
+                    .col-sm-3.flex-right.flex-row
 
                         ul.nav.navbar-nav
 
                             li
-                                a(href="javascript:void(0)") Config
+                                a(href="javascript:void(0)" ui-sref="configuration")
+                                    i.fa.fa-cog.fa-fw
+                                    span Configuration
 
 
-        div.full-height(ui-view="")
+        div#page-wrapper(ui-view="")

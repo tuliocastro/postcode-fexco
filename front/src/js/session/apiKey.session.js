@@ -1,6 +1,6 @@
 (function () {
 
-    angular.module(CONSTANTS.APP).factory('ConfigurationSession', Factory);
+    angular.module(CONSTANTS.APP).factory('APIKeySession', Factory);
 
     function Factory(localStorageService) {
 
@@ -10,13 +10,20 @@
 
             store: function (data) {
 
+                console.log(data);
                 var btoed = btoa(data);
 
                 localStorageService.set(KEY_PCW_KEY, btoed);
             },
 
             get: function () {
+
                 var btoed = localStorageService.get(KEY_PCW_KEY);
+
+                if (!btoed){
+                    return null;
+                }
+
                 return atob(btoed);
             },
 
