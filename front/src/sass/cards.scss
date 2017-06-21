@@ -1,0 +1,31 @@
+@import "base/mixins", "colors";
+
+.cards {
+
+  .cards-stripped {
+
+  }
+
+  .card {
+
+    background: #FFF;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    @include border-radius(5px);
+    @include box-shadow(0 1px 4px darken($bgBody, 5%));
+
+    .card-counter {
+
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
+      font-size: 15px;
+      background: darken($bgBody, 5%);
+      color: darken($bgBody, 50%);
+      text-align: center;
+      @include border-radius(50%)
+
+    }
+  }
+
+}

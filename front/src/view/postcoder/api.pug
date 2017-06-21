@@ -1,0 +1,127 @@
+.container
+
+    h4.page-title.text-center Irish address lookup
+
+    .row
+
+        .col-sm-4
+
+            form.panel.panel-filter(ng-submit="ctrl.filter()" sticky="" offset="100")
+
+                .panel-heading
+
+                    h3.panel-title Filter
+
+                .panel-body
+
+                    fieldset
+
+                        legend Select a Lookup Service:
+
+                        .form-group
+
+                            select.form-control(ng-model="ctrl.selectedLookup" ng-options="lookup as lookup.name for lookup in ctrl.lookups")
+
+                    fieldset(ng-show="ctrl.selectedLookup")
+
+                        legend Query
+
+                        .row
+                            div(ng-repeat="field in ctrl.selectedLookup.fields track by $index" class="{{field.grid || 'col-xs-12'}}")
+
+                                .form-group
+
+                                    label.control-label {{field.label}}
+
+                                    input.form-control(ng-model="field.value" ng-required="{{field.required || false}}")
+
+
+                    //fieldset(ng-show="ctrl.selectedLookup")
+
+                        legend Parameters
+
+                        table.table.table-striped
+
+                            thead
+
+                                tr
+                                    th Key
+                                    th Value
+                                    th
+                                        button.btn.btn-primary.btn-xs(type="button" ng-click="ctrl.addParameter()")
+                                            i.fa.fa-plus
+                            tbody
+
+                                tr(ng-repeat="(key, value) in ctrl.params track by $index")
+
+                                    td
+                                        input.form-control(ng-model="key")
+
+                                    td
+                                        input.form-control(ng-model="value")
+
+                                    td
+
+                                        a.btn-link(href="javascript:void(0)" ng-click="ctrl.removeParameter(param)")
+                                            i.fa.fa-minus
+
+                .panel-footer
+
+                    button.btn.btn-primary(type="submit") Send
+
+
+        .col-sm-8
+
+            .panel.panel-transparent
+
+                .panel-heading
+
+                    div(ng-include="'pagination.html'")
+
+                .panel-body
+
+                    .cards.cards-stripped
+
+                        .card(ng-repeat="address in ctrl.addresses track by $index")
+
+                            .media
+
+                                .media-left.media-middle
+
+                                    label.card-counter {{$index+1}}
+
+                                .media-body
+
+                                    dl.dl-horizontal
+                                        .text-left(ng-repeat="(key, value) in address")
+                                            dt {{key}}:
+                                            dd  {{value}}
+
+
+script(type="text/ng-template" id="pagination.html")
+
+    nav(aria-label="..." ng-show="ctrl.pagination")
+
+        ul.pager
+
+            li.previous
+                a(href="javascript:void(0)" ng-click="ctrl.previousPage()" ng-disabled="ctrl.page <= 0")
+                    span(aria-hidden="true") &larr;
+                    span Previous
+
+            li
+                span Total Results:
+                    b  {{ctrl.pagination.totalresults}}
+
+            li.next
+                a(href="javascript:void(0)" ng-click="ctrl.nextPage()" ng-if="ctrl.pagination.morevalues")
+                    span Next
+                    span(aria-hidden="true") &rarr;
+
+
+
+
+
+
+
+

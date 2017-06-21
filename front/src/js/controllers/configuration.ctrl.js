@@ -4,7 +4,7 @@
 
     function Controller($state, APIKeySession) {
 
-        const INITIAL_ROUTE = "ie.address";
+        const INITIAL_ROUTE = "postcoder.api";
 
         var ctrl = this;
 
