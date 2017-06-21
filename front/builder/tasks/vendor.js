@@ -64,7 +64,7 @@ gulp.task('vendor:js', function () {
 
     var realPaths = [];
 
-    //NPM repositorio - libs
+    //NPM repository - libs
     for (var i = 0; i < config.deps.js.length; i++) {
 
         var dependency = config.deps.js[i];
@@ -83,26 +83,4 @@ gulp.task('vendor:js', function () {
 });
 
 
-gulp.task('vendor:offlib:js', function () {
-
-    var dest = path.join(appRoot.path, config.src.build, 'js');
-
-    var realPaths = [];
-
-    //Offline - libs
-    for (var i = 0; i < config.deps.offlibs.length; i++) {
-
-        var offlib = config.deps.offlibs[i];
-        var file = path.join(appRoot.path, offlib);
-
-        realPaths.push(file)
-
-    }
-
-    return gulp
-        .src(realPaths)
-        .pipe(gulp.dest(dest));
-
-});
-
-gulp.task('vendor:resources', ['vendor:js', 'vendor:css', 'vendor:fonts', 'vendor:offlib:js']);
+gulp.task('vendor:resources', ['vendor:js', 'vendor:css', 'vendor:fonts']);
