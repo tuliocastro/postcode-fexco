@@ -7,18 +7,19 @@
 
 $bgBorderPanelFilter: #e2e6e9;
 
-.panel.panel-filter {
+.panel.panel-default {
 
   overflow: hidden;
   border: 1px solid $bgBorderPanelFilter;
 
   .panel-heading {
     background: #EEF2F5;
+    text-align: center;
 
     .panel-title {
-      color: #a1a4a6;
+      color: #6C7A89;
       font-size: 15px;
-      padding: 10px 0;
+      padding: 5px 0;
     }
   }
 
@@ -57,6 +58,10 @@ $bgBorderPanelFilter: #e2e6e9;
         height: 35px;
         font-size: 16px;
         color: #5a6876;
+
+        &::-webkit-input-placeholder {
+          color: #DDD;
+        }
       }
 
       select.form-control {
@@ -70,8 +75,9 @@ $bgBorderPanelFilter: #e2e6e9;
   .panel-footer {
     padding: 0;
     border: none;
+    border-top: 1px solid $bgBorderPanelFilter;
     @include display-flex;
-    @include flex-direction(column);
+    @include flex-direction(row);
     @include align-items();
     @include align-content();
 
@@ -79,7 +85,9 @@ $bgBorderPanelFilter: #e2e6e9;
       border: none;
       border-radius: 0;
       padding: 15px 15px;
-      text-transform: uppercase;
+      text-transform: capitalize;
+      font-size: 15px;
+      flex-grow: 1;
     }
   }
 }

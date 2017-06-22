@@ -10,7 +10,6 @@
 
             store: function (data) {
 
-                console.log(data);
                 var btoed = btoa(data);
 
                 localStorageService.set(KEY_PCW_KEY, btoed);

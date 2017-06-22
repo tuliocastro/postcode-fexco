@@ -11,7 +11,7 @@
         ctrl.apiKey = APIKeySession.get() || '';
 
         ctrl.save = save;
-        ctrl.cancel = cancel;
+        ctrl.reset = reset;
 
         /**
          * Functions
@@ -24,7 +24,7 @@
 
         }
 
-        function cancel() {
+        function reset() {
 
             delete ctrl.apiKey;
         }

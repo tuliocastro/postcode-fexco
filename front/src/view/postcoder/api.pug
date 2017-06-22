@@ -4,7 +4,7 @@
 
         .col-sm-4
 
-            form.panel.panel-filter(ng-submit="ctrl.filter()" sticky="" offset="80")
+            form.panel.panel-default(ng-submit="ctrl.filter()" sticky="" offset="80")
 
                 .panel-heading
 
@@ -57,15 +57,21 @@
 
         .col-sm-8
 
-            .alert.alert-info.text-center(ng-hide="ctrl.addresses")
+            .alert.alert-info.text-center(ng-show="!ctrl.addresses && !ctrl.selectedLookup")
 
-                | Please, fill in the required fields
+                | Please, fill in the required fields.
 
-            .cards
+            .alert.alert-warning.text-center(ng-show="ctrl.addresses.length == 0")
+
+                | Sorry, we haven`t found any results, please try again with another fields.
+
+            .alert.alert-danger.text-center(ng-show="false")
+
+                | This is a error test message.
+
+            .cards(ng-show="ctrl.addresses && ctrl.addresses.length > 0")
 
                 .card.card-transparent.paddingless
-
-                    div(ng-include="'pagination.html'")
 
                     .form-group.form-group-inverse
 
@@ -79,18 +85,16 @@
 
                 .card.card-default(ng-repeat="address in ctrl.addresses | filter:instantFilter track by $index")
 
-                    .media
+                        label.card-counter {{$index+1}}
 
-                        .media-left.media-middle
+                        dl.dl-horizontal
+                            .text-left(ng-repeat="(key, value) in address")
+                                dt {{key}}:
+                                dd  {{value}}
 
-                            label.card-counter {{$index+1}}
+                .card.card-transparent.paddingless
 
-                        .media-body
-
-                            dl.dl-horizontal
-                                .text-left(ng-repeat="(key, value) in address")
-                                    dt {{key}}:
-                                    dd  {{value}}
+                    div(ng-include="'pagination.html'")
 
 
 script(type="text/ng-template" id="pagination.html")
@@ -100,7 +104,7 @@ script(type="text/ng-template" id="pagination.html")
         ul.pager
 
             li.previous
-                a(href="javascript:void(0)" ng-click="ctrl.previousPage()" ng-disabled="ctrl.page <= 0")
+                button.btn.btn-default(type="button" ng-click="ctrl.previousPage()" ng-disabled="{{ctrl.params.page <= 0}}")
                     span(aria-hidden="true") &larr;
                     span Previous
 
@@ -109,7 +113,7 @@ script(type="text/ng-template" id="pagination.html")
                     b  {{ctrl.pagination.totalresults}}
 
             li.next
-                a(href="javascript:void(0)" ng-click="ctrl.nextPage()" ng-if="ctrl.pagination.morevalues")
+                button.btn.btn-default(type="button" ng-click="ctrl.nextPage()" ng-disabled="{{ctrl.pagination.morevalues}}")
                     span Next
                     span(aria-hidden="true") &rarr;
 

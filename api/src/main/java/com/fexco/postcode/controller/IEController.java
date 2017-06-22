@@ -36,7 +36,7 @@ public class IEController {
     }
 
 
-    @RequestMapping(value = "{apiKey}/rgeo/ie/{latitude}/{longitude}")
+    @RequestMapping(value = "{apiKey}/rgeo/ie/{latitude:.+}/{longitude:.+}")
     public String findReverseGeo(@PathVariable String apiKey, @PathVariable String latitude, @PathVariable String longitude, @RequestParam Map<String, String> params) {
 
         return eircodeService.findRGeo(apiKey, latitude, longitude, params);

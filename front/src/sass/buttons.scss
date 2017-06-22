@@ -2,9 +2,9 @@
 
 .btn-success {
 
-  background-color: $bgSuccess;
+  background: $bgSuccess;
 
-  &:hover, &:focus, &:visited {
+  &:hover, &:focus, &:visited, &:active, &:active:focus {
     background-color: $bgSuccessHover;
   }
 }

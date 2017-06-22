@@ -11,7 +11,8 @@
         ctrl.params = {
             page: 0,
             lines: null,
-            distance: null
+            distance: null,
+            format: 'json'
         };
         ctrl.addresses = null;
         ctrl.pagination = null;

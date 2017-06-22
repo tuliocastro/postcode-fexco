@@ -1,0 +1,20 @@
+.pager {
+
+  li > a, li > span {
+
+    border-radius: 5px;
+    line-height: 25px;
+
+  }
+
+  li > a > span:not(:last-of-type), li > .btn > span:not(:last-of-type) {
+    margin-right: 5px;
+  }
+
+  li > span {
+
+    background: none;
+    border:none;
+
+  }
+}

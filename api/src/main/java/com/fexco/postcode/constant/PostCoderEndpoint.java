@@ -7,10 +7,10 @@ public class PostCoderEndpoint {
 
     public static class IE {
 
-        public static final String ADDRESS = "/address/ie/";
-        public static final String ADDRESSGEO = "/addressgeo/ie/";
-        public static final String POSITION = "/position/ie/";
-        public static final String RGEO = "/rgeo/ie/";
+        public static final String ADDRESS = "/address/ie";
+        public static final String ADDRESSGEO = "/addressgeo/ie";
+        public static final String POSITION = "/position/ie";
+        public static final String RGEO = "/rgeo/ie";
 
     }
 

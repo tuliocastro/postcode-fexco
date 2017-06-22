@@ -1,24 +1,29 @@
-h1 Configuration
-
 .full-height
 
     .flex-centered
 
-        form.panel.panel-box(ng-submit="ctrl.save()")
+        .col-sm-6
 
-            .panel-heading
+            form.panel.panel-default(ng-submit="ctrl.save()")
 
-                .panel-title Please type your PCW API Key:
+                .panel-heading
 
-            .panel-body
+                    .panel-title Configuration
 
-                .input-group
+                .panel-body
 
-                    input.form-control(ng-model="ctrl.apiKey")
+                    .row
 
-            .panel-footer
+                        .col-xs-12
 
-                button.btn.btn-default(type="button" ng-click="ctrl.cancel()") Cancel
+                            .form-group
 
-                button.btn.btn-primary(type="submit") Save
+                                label Please, fill in with your API Key:
+                                input.form-control(ng-model="ctrl.apiKey" placeholder="Example: PCW45-12345-12345-1234X" autofocus="true")
+
+                .panel-footer
+
+                    button.btn.btn-success(type="submit") Save
+
+                    button.btn.btn-default(type="button" ng-click="ctrl.reset()") Reset
 

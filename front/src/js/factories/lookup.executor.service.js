@@ -3,7 +3,7 @@
 
     angular.module(CONSTANTS.APP).factory('LookupServiceExecutor', Factory);
 
-    function Factory(IEService) {
+    function Factory(IEService, UKService) {
 
         var instances = [
             {

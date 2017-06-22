@@ -4,21 +4,20 @@
 
   .card {
 
+    position: relative;
     margin-bottom: 10px;
-    padding: 10px 20px;
+    padding: 15px 20px;
+    overflow: hidden;
     @include border-radius(5px);
 
     .card-counter {
 
-      width: 48px;
-      height: 48px;
-      line-height: 48px;
-      font-size: 15px;
-      background: darken($bgBody, 5%);
+      position: absolute;
+      font-size: 80px;
+      right: 5px;
+      bottom: 5px;
       color: darken($bgBody, 50%);
-      text-align: center;
-      @include border-radius(50%)
-
+      opacity: .1;
     }
   }
 
