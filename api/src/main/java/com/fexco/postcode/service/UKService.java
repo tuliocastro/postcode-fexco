@@ -3,19 +3,16 @@ package com.fexco.postcode.service;
 import com.fexco.postcode.constant.PostCoderEndpoint;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.Date;
 import java.util.Map;
 
 @Service
-public class PremiseService {
+public class UKService {
 
-    private Logger logger = LoggerFactory.getLogger(PremiseService.class);
+    private Logger logger = LoggerFactory.getLogger(UKService.class);
 
     //TODO Try catch
     //TODO Test cache

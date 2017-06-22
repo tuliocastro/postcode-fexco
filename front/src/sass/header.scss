@@ -4,38 +4,22 @@
 
   background: $bgHeader;
   border: none;
-  border-top: 4px solid rgba(#000, .2);
-  color: $fgHeader;
 
-  a {
-    color: rgba($fgHeader, .7);
-  }
+  .navbar-brand, ul li > a {
+    color: $fgHeader;
+    font-size: 12px;
+    text-transform: uppercase;
 
-  a:hover, a:focus, a:visited {
-    background: rgba(#000, .2);
-    color: rgba($fgHeader, 1);
-  }
-
-  /* Menu Links */
-  .menu {
-
-    &, a {
-
-      .caption {
-        font-size: 10px;
-        background-color: $fgHeader;
-        color: $bgHeader;
-        padding: 3px 5px;
-        @include border-radius(7px);
-      }
-
-      .caption ~ span {
-        display: block;
-      }
+    & > i, .caret {
+      margin: 0 5px;
     }
+  }
 
-    a.active, .active a {
-      border-bottom: 3px solid $fgHeader;
+  ul li > a {
+    color: rgba($fgHeader, .7);
+
+    &:hover, &:focus, &:visited {
+      background: rgba(#000, .2);
       color: rgba($fgHeader, 1);
     }
   }

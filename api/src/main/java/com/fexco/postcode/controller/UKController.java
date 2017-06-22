@@ -1,6 +1,6 @@
 package com.fexco.postcode.controller;
 
-import com.fexco.postcode.service.PremiseService;
+import com.fexco.postcode.service.UKService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,10 +8,10 @@ import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = "*")
-public class PremiseController {
+public class UKController {
 
     @Autowired
-    PremiseService premiseService;
+    UKService premiseService;
 
     @RequestMapping(value = "{apiKey}/address/uk/{query}")
     public String findAddress(@PathVariable String apiKey, @PathVariable String query, @RequestParam Map<String, String> mapParams) {

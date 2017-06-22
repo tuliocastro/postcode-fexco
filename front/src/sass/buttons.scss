@@ -1,0 +1,10 @@
+@import "colors";
+
+.btn-success {
+
+  background-color: $bgSuccess;
+
+  &:hover, &:focus, &:visited {
+    background-color: $bgSuccessHover;
+  }
+}

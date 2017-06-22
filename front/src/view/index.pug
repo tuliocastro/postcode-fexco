@@ -21,28 +21,16 @@ html(ng-app="app")
 
             .container-fluid
 
-                .row.flex-row.flex-centered
+                .navbar-brand PostCoder-Search
 
-                    .col-sm-3
+                .navbar-header.navbar-right
 
-                        .navbar-brand PostCoder-Search
+                    ul.nav.navbar-nav
 
-                    .col-sm-6.flex-row.flex-centered
-
-                        ul.menu.nav.navbar-nav.text-center
-
-                            li
-                                a(href="javascript:void(0)" ui-sref="postcoder.api")
-                                    span Find Addresses
-
-                    .col-sm-3.flex-right.flex-row
-
-                        ul.nav.navbar-nav
-
-                            li
-                                a(href="javascript:void(0)" ui-sref="configuration")
-                                    i.fa.fa-cog.fa-fw
-                                    span Configuration
+                        li
+                            a(role="button" ui-sref="configuration")
+                                i.fa.fa-key.fa-fw
+                                span Api Key
 
 
         div#page-wrapper(ui-view="")

@@ -1,6 +1,6 @@
 package com.fexco.postcode.controller;
 
-import com.fexco.postcode.service.EircodeService;
+import com.fexco.postcode.service.IEService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,10 +8,10 @@ import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = "*")
-public class EircodeController {
+public class IEController {
 
     @Autowired
-    EircodeService eircodeService;
+    IEService eircodeService;
 
     @RequestMapping(value = "{apiKey}/address/ie/{query}")
     public String findAddress(@PathVariable String apiKey, @PathVariable String query, @RequestParam Map<String, String> params) {

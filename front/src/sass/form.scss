@@ -1,0 +1,42 @@
+@import "base/mixins";
+
+.form-group {
+
+  .form-control {
+
+    height: 40px;
+    @include box-shadow(none);
+
+    &:focus {
+      outline: none;
+      @include box-shadow(none);
+    }
+
+  }
+
+}
+
+.form-group.form-group-inverse {
+
+  .form-control, .input-group-addon {
+    border: none;
+    background: #EEF2F5;
+    color: #6C7A89;
+    padding-left: 15px;
+  }
+
+}
+
+.form-rounded {
+
+  .form-control {
+
+    @include border-radius(20px);
+
+  }
+
+  .input-group-addon:first-child {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+}

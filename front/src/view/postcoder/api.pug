@@ -1,12 +1,10 @@
 .container
 
-    h4.page-title.text-center Irish address lookup
-
     .row
 
         .col-sm-4
 
-            form.panel.panel-filter(ng-submit="ctrl.filter()" sticky="" offset="100")
+            form.panel.panel-filter(ng-submit="ctrl.filter()" sticky="" offset="80")
 
                 .panel-heading
 
@@ -14,88 +12,85 @@
 
                 .panel-body
 
-                    fieldset
+                    .row
 
-                        legend Select a Lookup Service:
+                        .col-xs-12
 
-                        .form-group
+                            .form-group
 
-                            select.form-control(ng-model="ctrl.selectedLookup" ng-options="lookup as lookup.name for lookup in ctrl.lookups")
+                                label Select a Lookup Service:
 
-                    fieldset(ng-show="ctrl.selectedLookup")
+                                select.form-control(ng-model="ctrl.selectedLookup" ng-options="lookup as lookup.name for lookup in ctrl.lookups")
 
-                        legend Query
+                    .row(ng-show="ctrl.selectedLookup")
 
-                        .row
-                            div(ng-repeat="field in ctrl.selectedLookup.fields track by $index" class="{{field.grid || 'col-xs-12'}}")
+                        div(ng-repeat="field in ctrl.selectedLookup.fields track by $index" class="{{field.grid || 'col-xs-12'}}")
 
-                                .form-group
+                            .form-group
 
-                                    label.control-label {{field.label}}
+                                label.control-label {{field.label}}
 
-                                    input.form-control(ng-model="field.value" ng-required="{{field.required || false}}")
+                                input.form-control(ng-model="field.value" ng-required="{{field.required || false}}")
 
 
-                    //fieldset(ng-show="ctrl.selectedLookup")
 
-                        legend Parameters
+                    .row(ng-show="ctrl.selectedLookup")
 
-                        table.table.table-striped
+                        .col-xs-6
 
-                            thead
+                            .form-group
 
-                                tr
-                                    th Key
-                                    th Value
-                                    th
-                                        button.btn.btn-primary.btn-xs(type="button" ng-click="ctrl.addParameter()")
-                                            i.fa.fa-plus
-                            tbody
+                                label.control-label Distance
+                                input.form-control(ng-model="ctrl.params.distance")
 
-                                tr(ng-repeat="(key, value) in ctrl.params track by $index")
+                        .col-xs-6
 
-                                    td
-                                        input.form-control(ng-model="key")
+                            .form-group
 
-                                    td
-                                        input.form-control(ng-model="value")
+                                label.control-label Lines
+                                input.form-control(ng-model="ctrl.params.lines")
 
-                                    td
+                .panel-footer(ng-show="ctrl.selectedLookup")
 
-                                        a.btn-link(href="javascript:void(0)" ng-click="ctrl.removeParameter(param)")
-                                            i.fa.fa-minus
-
-                .panel-footer
-
-                    button.btn.btn-primary(type="submit") Send
+                    button.btn.btn-success(type="submit") Submit
 
 
         .col-sm-8
 
-            .panel.panel-transparent
+            .alert.alert-info.text-center(ng-hide="ctrl.addresses")
 
-                .panel-heading
+                | Please, fill in the required fields
+
+            .cards
+
+                .card.card-transparent.paddingless
 
                     div(ng-include="'pagination.html'")
 
-                .panel-body
+                    .form-group.form-group-inverse
 
-                    .cards.cards-stripped
+                        .input-group
 
-                        .card(ng-repeat="address in ctrl.addresses track by $index")
+                            .input-group-addon
 
-                            .media
+                                i.fa.fa-search
 
-                                .media-left.media-middle
+                            input.form-control(ng-model="instantFilter" placeholder="Search in results ...")
 
-                                    label.card-counter {{$index+1}}
+                .card.card-default(ng-repeat="address in ctrl.addresses | filter:instantFilter track by $index")
 
-                                .media-body
+                    .media
 
-                                    dl.dl-horizontal
-                                        .text-left(ng-repeat="(key, value) in address")
-                                            dt {{key}}:
-                                            dd  {{value}}
+                        .media-left.media-middle
+
+                            label.card-counter {{$index+1}}
+
+                        .media-body
+
+                            dl.dl-horizontal
+                                .text-left(ng-repeat="(key, value) in address")
+                                    dt {{key}}:
+                                    dd  {{value}}
 
 
 script(type="text/ng-template" id="pagination.html")
