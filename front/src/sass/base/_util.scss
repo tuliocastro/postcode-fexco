@@ -1,0 +1,175 @@
+/************************************
+        Utility classes
+************************************/
+@import "mixins";
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.scrollable {
+  overflow-y: auto;
+  -webkit-transition-property: top, bottom;
+  transition-property: top, bottom;
+  -webkit-transition-duration: .2s, .2s;
+  transition-duration: .2s, .2s;
+  -webkit-transition-timing-function: linear, linear;
+  transition-timing-function: linear, linear;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+.flex {
+  @include display-flex;
+}
+
+.flex-centered {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(center)
+}
+
+.flex-right {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(flex-end);
+  @include justify-content(flex-end)
+}
+
+.flex-row {
+
+  @include display-flex;
+  @include flex-direction(row);
+
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.captalize {
+  text-transform: capitalize;
+}
+
+.btn {
+  text-align: center;
+}
+
+.btn-circle {
+  border-radius: 100%;
+}
+
+.bg-cover {
+  @include background-size(cover);
+}
+
+.bg-overlay {
+  opacity: .9;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.list-horizontal {
+
+  padding: 0;
+  margin: 0;
+
+  li {
+    list-style: none;
+    display: inline-block;
+  }
+}
+
+.marginless {
+  margin: 0 !important;
+}
+
+.paddingless {
+  padding: 0 !important;
+}
+
+.img-rounded {
+  @include border-radius(100%);
+}
+
+.img-grayscale {
+
+  @include grayscale(100%)
+}
+
+.img-cell-fixed-64 {
+
+  @include img-cell-fixed(64px);
+}
+
+.img-cell-fixed-96 {
+
+  @include img-cell-fixed(96px);
+
+}
+
+/************************************
+      Hover Appear Util
+************************************/
+
+.hover-reference {
+
+  .hover-appear {
+    opacity: 0;
+    @include transition(.2s linear all);
+  }
+
+  .hover-hide {
+    opacity: 1;
+    @include transition(.2s linear all);
+  }
+
+  &:hover {
+
+    .hover-appear {
+      opacity: 1;
+    }
+
+    .hover-hide {
+      opacity: 0;
+    }
+  }
+
+}
+
+.hover-reference.absolute-hide {
+
+  .hover-appear {
+    position: absolute;
+  }
+
+  &:hover {
+
+    .hover-appear {
+      position: relative;
+    }
+
+    .hover-hide {
+      position: absolute;
+    }
+  }
+}

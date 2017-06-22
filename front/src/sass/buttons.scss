@@ -1,0 +1,32 @@
+@import "colors";
+
+.btn-success {
+
+  background: $bgSuccess;
+
+  &:hover, &:focus, &:visited, &:active, &:active:focus {
+    background-color: $bgSuccessHover;
+  }
+}
+
+.btn-primary {
+
+  background: $bgPrimary;
+
+  &:hover, &:focus, &:visited, &:active, &:active:focus {
+    background-color: $bgPrimaryHover;
+  }
+}
+
+.btn-default {
+
+  border-color: $bgDefault;
+  background: $bgDefault;
+  color: $fgDefault;
+
+  &:hover, &:focus, &:visited, &:active, &:active:focus, &[disabled]:hover {
+    background-color: $bgDefaultHover;
+    border-color: $bgDefaultHover;
+    color: $fgDefault;
+  }
+}

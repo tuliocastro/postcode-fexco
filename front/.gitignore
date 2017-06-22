@@ -1,0 +1,10 @@
+*.iml
+*.ipr
+*.iws
+.idea
+.idea/
+/logs
+/tmp
+/www
+node_modules/
+npm-debug.log*

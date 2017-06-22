@@ -1,0 +1,46 @@
+@import "base/mixins", "colors";
+
+.cards {
+
+  .card {
+
+    position: relative;
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    overflow: hidden;
+    @include border-radius(5px);
+
+    .card-counter {
+
+      position: absolute;
+      font-size: 80px;
+      right: 5px;
+      bottom: 5px;
+      color: darken($bgBody, 50%);
+      opacity: .1;
+    }
+  }
+
+  .card-well {
+
+    background: #EEEEEE;
+    color: $fgTextPrimary;
+
+  }
+
+  .card-default {
+
+    background: #FFF;
+    color: $fgTextPrimary;
+    @include box-shadow(0 1.5px 3px #CCC);
+
+  }
+
+  .card-transparent {
+
+    background: none !important;
+    border: none !important;
+
+  }
+
+}

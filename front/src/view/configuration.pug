@@ -1,0 +1,29 @@
+.full-height
+
+    .flex-centered
+
+        .col-sm-6
+
+            form.panel.panel-default(ng-submit="ctrl.save()")
+
+                .panel-heading
+
+                    .panel-title Configuration
+
+                .panel-body
+
+                    .row
+
+                        .col-xs-12
+
+                            .form-group
+
+                                label Please, fill in with your API Key:
+                                input.form-control(ng-model="ctrl.apiKey" placeholder="Example: PCW45-12345-12345-1234X" autofocus="true")
+
+                .panel-footer
+
+                    button.btn.btn-success(type="submit") Save
+
+                    button.btn.btn-default(type="button" ng-click="ctrl.reset()") Reset
+

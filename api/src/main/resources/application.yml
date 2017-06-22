@@ -1,0 +1,4 @@
+cache:
+  redis:
+    hostname: rediscache
+    port: 6379

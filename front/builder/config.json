@@ -1,0 +1,36 @@
+{
+  "project": {
+    "name": "postcoder"
+  },
+  "src": {
+    "vendor": "node_modules/",
+    "view": "src/view/",
+    "js": "src/js/",
+    "style": "src/sass/",
+    "img": "src/img/",
+    "font": "src/fonts/",
+    "build": "www/",
+    "dist": "docker/dist"
+  },
+  "deps": {
+    "css": [
+      "angular/angular-csp.css",
+      "bootstrap/dist/css/bootstrap.css",
+      "font-awesome/css/font-awesome.css",
+      "angular-growl-v2/build/angular-growl.css"
+    ],
+    "js": [
+      "jquery/dist/jquery.min.js",
+      "bootstrap/dist/js/bootstrap.min.js",
+      "angular/angular.min.js",
+      "angular-ui-router/release/angular-ui-router.min.js",
+      "angular-local-storage/dist/angular-local-storage.js",
+      "ngsticky/dist/sticky.min.js",
+      "angular-growl-v2/build/angular-growl.js"
+    ],
+    "fonts": [
+      "font-awesome/fonts/*"
+    ],
+    "offlibs": []
+  }
+}
