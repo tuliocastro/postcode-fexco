@@ -1,0 +1,92 @@
+@import "base/mixins", "colors";
+
+.panel.panel-transparent {
+  background: none;
+  @include box-shadow(none);
+}
+
+.panel.panel-default {
+
+  overflow: hidden;
+  border: 1px solid $bgBorderPanelDefault;
+
+  .panel-heading {
+    background: $bgHeaderPanelDefault;
+    text-align: center;
+
+    .panel-title {
+      color: $fgHeaderPanelDefault;
+      font-size: 13px;
+      padding: 5px 0;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+  }
+
+  .panel-body {
+    padding: 0;
+
+    .row:not(:first-of-type) {
+      border-top: 1px solid $bgBorderPanelDefault;
+
+      &.ng-hide {
+        border-top: none;
+      }
+
+      div[class*="col-xs"]:not(:last-child) {
+        border-right: 1px solid $bgBorderPanelDefault;
+      }
+    }
+
+    .form-group {
+
+      margin-bottom: 0;
+      padding-bottom: 10px;
+
+      > label, .control-label {
+        color: rgba($fgTextPrimary, .8);
+        font-weight: 300;
+        font-size: 13px;
+        padding: 10px 15px;
+        display: block;
+        margin: 0;
+      }
+
+      .form-control {
+        padding: 10px 15px;
+        border: none;
+        height: 35px;
+        font-size: 16px;
+        color: darken($fgTextPrimary, 10%);
+
+        &::-webkit-input-placeholder {
+          color: #DDD;
+        }
+      }
+
+      select.form-control {
+        width: calc(100% - 15px);
+      }
+    }
+
+  }
+
+  .panel-footer {
+    padding: 0;
+    border: none;
+    border-top: 1px solid $bgBorderPanelDefault;
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items();
+    @include align-content();
+
+    .btn {
+      border: none;
+      border-radius: 0;
+      padding: 15px 15px;
+      text-transform: capitalize;
+      font-size: 15px;
+      flex-grow: 1;
+    }
+  }
+}

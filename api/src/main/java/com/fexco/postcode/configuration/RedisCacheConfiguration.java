@@ -23,10 +23,9 @@ public class RedisCacheConfiguration extends CachingConfigurerSupport {
     private Integer port;
 
     @Bean
-    @Order(20)
     public JedisConnectionFactory jedisConnectionFactory() {
 
-        logger.info("Initializing Redis factory ...");
+        logger.info("Initializing Redis connection on " + hostname + ":" + port);
 
         JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
         jedisConnectionFactory.setHostName(hostname);
@@ -35,7 +34,6 @@ public class RedisCacheConfiguration extends CachingConfigurerSupport {
     }
 
     @Bean
-    @Order(30)
     public RedisTemplate<Object, Object> redisTemplate() {
 
         logger.info("Initializing Redis Template ...");
@@ -47,7 +45,6 @@ public class RedisCacheConfiguration extends CachingConfigurerSupport {
     }
 
     @Bean
-    @Order(40)
     public RedisCacheManager cacheManager() {
 
         logger.info("Getting redis cache manager");

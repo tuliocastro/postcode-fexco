@@ -1,0 +1,21 @@
+@import "base/baseimport", "colors";
+
+$headerHeight: 50px;
+
+body {
+  background-color: $bgBody;
+  color: $fgBody;
+  //font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+  font-style: normal;
+  overflow: hidden;
+}
+
+.navbar-fixed-top ~ #page-wrapper {
+  margin-top: $headerHeight;
+  height: calc(100% - #{$headerHeight});
+  overflow-y: auto;
+  padding-top: 30px;
+}

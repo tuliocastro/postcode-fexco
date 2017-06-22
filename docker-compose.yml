@@ -1,0 +1,22 @@
+version: '2'
+services:
+    tulio-postcoder-redis:
+        #image: redis:latest
+        #ports:
+        #    - "6379"
+        build: ./redis
+        
+            
+    tulio-postcoder-api:
+        image: tuliocastro/postcoder-api
+        external_links:
+            - tulio-postcoder-redis:rediscache
+        ports:
+            - 8080:8080
+        links:
+            - tulio-postcoder-redis:rediscache
+            
+            
+    
+    
+    

@@ -1,0 +1,10 @@
+@import "colors";
+
+.section-title {
+  color: $fgTextPrimary;
+  font-weight: 200;
+  font-size: 17px;
+  margin-bottom: 20px;
+  line-height: 40px;
+  text-transform: uppercase;
+}

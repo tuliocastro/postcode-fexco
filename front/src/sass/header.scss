@@ -1,0 +1,27 @@
+@import "colors", "base/mixins";
+
+#header {
+
+  background: $bgHeader;
+  border: none;
+
+  .navbar-brand, ul li > a {
+    color: $fgHeader;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    & > i, .caret {
+      margin: 0 5px;
+    }
+  }
+
+  ul li > a {
+    color: rgba($fgHeader, .7);
+
+    &:hover, &:focus, &:visited {
+      background: rgba(#000, .2);
+      color: rgba($fgHeader, 1);
+    }
+  }
+
+}
