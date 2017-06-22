@@ -9,7 +9,8 @@
     "style": "src/sass/",
     "img": "src/img/",
     "font": "src/fonts/",
-    "build": "www/"
+    "build": "www/",
+    "dist": "docker/dist"
   },
   "deps": {
     "css": [

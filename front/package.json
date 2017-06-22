@@ -9,7 +9,8 @@
     "reload": "live-reload app --port 35730",
     "build": "gulp build",
     "serve": "http-server -p 8090 -c-1 www/",
-    "dev": "concurrently --kill-others \"npm run serve\" \"gulp dev\""
+    "dev": "concurrently --kill-others \"npm run serve\" \"gulp dev\"",
+    "dist": "gulp dist"
   },
   "devDependencies": {
     "app-root-path": "^2.0.1",
