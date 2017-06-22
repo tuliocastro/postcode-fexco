@@ -5,19 +5,17 @@
   @include box-shadow(none);
 }
 
-$bgBorderPanelFilter: #e2e6e9;
-
 .panel.panel-default {
 
   overflow: hidden;
-  border: 1px solid $bgBorderPanelFilter;
+  border: 1px solid $bgBorderPanelDefault;
 
   .panel-heading {
-    background: #EEF2F5;
+    background: $bgHeaderPanelDefault;
     text-align: center;
 
     .panel-title {
-      color: #6C7A89;
+      color: darken($bgHeaderPanelDefault, 25%);
       font-size: 15px;
       padding: 5px 0;
     }
@@ -27,14 +25,14 @@ $bgBorderPanelFilter: #e2e6e9;
     padding: 0;
 
     .row:not(:first-of-type) {
-      border-top: 1px solid $bgBorderPanelFilter;
+      border-top: 1px solid $bgBorderPanelDefault;
 
       &.ng-hide {
         border-top: none;
       }
 
       div[class*="col-xs"]:not(:last-child) {
-        border-right: 1px solid $bgBorderPanelFilter;
+        border-right: 1px solid $bgBorderPanelDefault;
       }
     }
 
@@ -44,7 +42,7 @@ $bgBorderPanelFilter: #e2e6e9;
       padding-bottom: 10px;
 
       > label, .control-label {
-        color: #959ea4;
+        color: rgba($fgTextPrimary, .8);
         font-weight: 300;
         font-size: 13px;
         padding: 10px 15px;
@@ -57,7 +55,7 @@ $bgBorderPanelFilter: #e2e6e9;
         border: none;
         height: 35px;
         font-size: 16px;
-        color: #5a6876;
+        color: darken($fgTextPrimary, 10%);
 
         &::-webkit-input-placeholder {
           color: #DDD;
@@ -65,7 +63,6 @@ $bgBorderPanelFilter: #e2e6e9;
       }
 
       select.form-control {
-        margin-left: 10px;
         width: calc(100% - 15px);
       }
     }
@@ -75,7 +72,7 @@ $bgBorderPanelFilter: #e2e6e9;
   .panel-footer {
     padding: 0;
     border: none;
-    border-top: 1px solid $bgBorderPanelFilter;
+    border-top: 1px solid $bgBorderPanelDefault;
     @include display-flex;
     @include flex-direction(row);
     @include align-items();
