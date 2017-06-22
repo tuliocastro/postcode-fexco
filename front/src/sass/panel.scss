@@ -15,9 +15,11 @@
     text-align: center;
 
     .panel-title {
-      color: darken($bgHeaderPanelDefault, 25%);
-      font-size: 15px;
+      color: $fgHeaderPanelDefault;
+      font-size: 13px;
       padding: 5px 0;
+      text-transform: uppercase;
+      font-weight: 500;
     }
   }
 

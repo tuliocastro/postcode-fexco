@@ -4,14 +4,21 @@
 
 $bgBody: #F4F8F9;
 $fgBody: #333;
-$bgHeader: #57AED8;
+$bgHeader: #43455A;
 $fgHeader: #FFF;
 $fgTextPrimary: #6C7A89;
 
 /* Panel default */
 $bgBorderPanelDefault: #e2e6e9;
-$bgHeaderPanelDefault: #EEF2F5;
+$bgHeaderPanelDefault: #e2e6e9;
+$fgHeaderPanelDefault: #848b96;
 
 /* States */
+$bgDefault: #57657B;
+$bgDefaultHover: darken($bgDefault, 15%);
+$fgDefault: #FFF;
 $bgSuccess: #A9CF55;
-$bgSuccessHover: #96bb51;
+$bgSuccessHover: darken($bgSuccess, 15%);
+$bgPrimary: #A966AD;
+$bgPrimaryHover: darken($bgPrimary, 15%);
+

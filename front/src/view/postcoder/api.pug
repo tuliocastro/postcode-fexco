@@ -8,7 +8,7 @@
 
                 .panel-heading
 
-                    h3.panel-title Filter
+                    h3.panel-title API Filter
 
                 .panel-body
 
@@ -31,7 +31,6 @@
                                 label.control-label {{field.label}}
 
                                 input.form-control(ng-model="field.value" ng-required="{{field.required || false}}")
-
 
 
                     .row(ng-show="ctrl.selectedLookup")
@@ -65,10 +64,10 @@
 
                 | Sorry, we haven`t found any results, please try again with another fields.
 
-            .cards
+            .cards(ng-show="ctrl.addresses && ctrl.addresses.length > 0")
 
                 .section-title Showing Results for page
-                    b  {{ctrl.params.page+1}}
+                    b  {{ctrl.params.page + 1}}
 
                 .card.card-transparent.paddingless
 
@@ -108,8 +107,7 @@ script(type="text/ng-template" id="pagination.html")
                     span Previous
 
             li
-                span Total Results:
-                    b  {{ctrl.pagination.totalresults}}
+                span Showing page {{ctrl.params.page + 1}}
 
             li.next
                 button.btn.btn-default(type="button" ng-click="ctrl.nextPage()" ng-disabled="!ctrl.pagination.morevalues")

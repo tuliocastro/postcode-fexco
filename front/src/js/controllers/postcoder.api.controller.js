@@ -2,7 +2,7 @@
 
     angular.module(CONSTANTS.APP).controller('PostcoderAPICtrl', Controller);
 
-    function Controller(_lookups) {
+    function Controller($window, _lookups) {
 
         var ctrl = this;
 
@@ -53,6 +53,10 @@
 
         function findAddresses() {
 
+            $window.scrollTo(0, 0);
+
+            delete ctrl.addresses;
+
             ctrl.selectedLookup.execute(ctrl.params).then(function (res) {
 
                 ctrl.addresses = res.data;
@@ -81,7 +85,6 @@
             };
 
             //Remove Pagination attributes from row result
-            //TODO Transformar em filter
             delete lastResult.morevalues;
             delete lastResult.nextpage;
             delete  lastResult.totalresults;

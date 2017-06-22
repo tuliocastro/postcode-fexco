@@ -1,6 +1,6 @@
 @import "base/baseimport", "colors";
 
-$headerHeight: 80px;
+$headerHeight: 50px;
 
 body {
   background-color: $bgBody;
@@ -10,9 +10,12 @@ body {
   letter-spacing: 0.5px;
   font-weight: 300;
   font-style: normal;
-  height: calc(100% - #{$headerHeight});
+  overflow: hidden;
 }
 
 .navbar-fixed-top ~ #page-wrapper {
   margin-top: $headerHeight;
+  height: calc(100% - #{$headerHeight});
+  overflow-y: auto;
+  padding-top: 30px;
 }

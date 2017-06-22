@@ -10,7 +10,7 @@
             findAddress: function (query, params) {
                 return API.get({
                     params: params,
-                    url: APIKeySession.get() + '/address/ie/' + query
+                    url: APIKeySession.get() + '/address/uk/' + query
                 });
             }
 

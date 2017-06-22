@@ -1,4 +1,4 @@
-@import "base/mixins";
+@import "base/mixins", "colors";
 
 .form-group {
 
@@ -20,8 +20,8 @@
 
   .form-control, .input-group-addon {
     border: none;
-    background: #EEF2F5;
-    color: #6C7A89;
+    background: darken($bgBody, 5%);
+    color: $fgTextPrimary;
     padding-left: 15px;
   }
 
