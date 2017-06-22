@@ -1,6 +1,7 @@
 package com.fexco.postcode.service;
 
 import com.fexco.postcode.constant.PostCoderEndpoint;
+import com.fexco.postcode.util.ResponseEntityUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,11 +83,11 @@ public class IEService {
 
         logger.info("Finding rgeo ...");
 
-        String url = PostCoderEndpoint.BASE + apiKey + PostCoderEndpoint.IE.RGEO + "/" + latitude + "/" + longitude;
+        String endpoint = PostCoderEndpoint.BASE + apiKey + PostCoderEndpoint.IE.RGEO + "/" + latitude + "/" + longitude;
 
-        logger.info("Getting "+url);
+        logger.info("Getting " + endpoint);
 
-        ResponseEntity<String> response = new RestTemplate().getForEntity(url, String.class, params);
+        ResponseEntity<String> response = ResponseEntityUtil.doGET(endpoint, params);
 
         return response.getBody();
 

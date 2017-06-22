@@ -22,7 +22,6 @@
                 resolve: {
                     _lookups: function (LookupServiceExecutor) {
 
-                        console.log(LookupServiceExecutor);
                         return LookupServiceExecutor.list();
                     }
 

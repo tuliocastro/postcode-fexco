@@ -3,7 +3,10 @@ package com.fexco.postcode.controller;
 import com.fexco.postcode.service.IEService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.HttpServerErrorException;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 @RestController
@@ -42,5 +45,6 @@ public class IEController {
         return eircodeService.findRGeo(apiKey, latitude, longitude, params);
 
     }
+
 
 }

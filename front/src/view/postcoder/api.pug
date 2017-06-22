@@ -65,11 +65,10 @@
 
                 | Sorry, we haven`t found any results, please try again with another fields.
 
-            .alert.alert-danger.text-center(ng-show="false")
+            .cards
 
-                | This is a error test message.
-
-            .cards(ng-show="ctrl.addresses && ctrl.addresses.length > 0")
+                .section-title Showing Results for page
+                    b  {{ctrl.params.page+1}}
 
                 .card.card-transparent.paddingless
 
@@ -85,12 +84,12 @@
 
                 .card.card-default(ng-repeat="address in ctrl.addresses | filter:instantFilter track by $index")
 
-                        label.card-counter {{$index+1}}
+                    label.card-counter {{$index+1}}
 
-                        dl.dl-horizontal
-                            .text-left(ng-repeat="(key, value) in address")
-                                dt {{key}}:
-                                dd  {{value}}
+                    dl.dl-horizontal
+                        .text-left(ng-repeat="(key, value) in address")
+                            dt {{key}}:
+                            dd  {{value}}
 
                 .card.card-transparent.paddingless
 
@@ -99,12 +98,12 @@
 
 script(type="text/ng-template" id="pagination.html")
 
-    nav(aria-label="..." ng-show="ctrl.pagination")
+    nav(aria-label="..." ng-show="ctrl.pagination || ctrl.params.page > 0")
 
         ul.pager
 
             li.previous
-                button.btn.btn-default(type="button" ng-click="ctrl.previousPage()" ng-disabled="{{ctrl.params.page <= 0}}")
+                button.btn.btn-default(type="button" ng-click="ctrl.previousPage()" ng-disabled="ctrl.params.page == 0")
                     span(aria-hidden="true") &larr;
                     span Previous
 
@@ -113,7 +112,7 @@ script(type="text/ng-template" id="pagination.html")
                     b  {{ctrl.pagination.totalresults}}
 
             li.next
-                button.btn.btn-default(type="button" ng-click="ctrl.nextPage()" ng-disabled="{{ctrl.pagination.morevalues}}")
+                button.btn.btn-default(type="button" ng-click="ctrl.nextPage()" ng-disabled="!ctrl.pagination.morevalues")
                     span Next
                     span(aria-hidden="true") &rarr;
 
