@@ -1,8 +1,4 @@
-package com.fexco.postcode.constant;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
+package com.fexco.postcoder.api.constant;
 
 public class PostCoderEndpoint {
 

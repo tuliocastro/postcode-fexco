@@ -1,14 +1,13 @@
-package com.fexco.postcode.service;
+package com.fexco.postcoder.api.service;
 
-import com.fexco.postcode.constant.PostCoderEndpoint;
-import com.fexco.postcode.util.ResponseEntityUtil;
+import com.fexco.postcoder.api.constant.PostCoderEndpoint;
+import com.fexco.postcoder.api.util.ResponseEntityUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.Map;
 
 @Service

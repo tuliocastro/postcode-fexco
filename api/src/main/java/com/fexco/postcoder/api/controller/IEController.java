@@ -1,13 +1,10 @@
-package com.fexco.postcode.controller;
+package com.fexco.postcoder.api.controller;
 
-import com.fexco.postcode.constant.PostCoderEndpoint;
-import com.fexco.postcode.service.IEService;
+import com.fexco.postcoder.api.constant.PostCoderEndpoint;
+import com.fexco.postcoder.api.service.IEService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.HttpServerErrorException;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 @RestController

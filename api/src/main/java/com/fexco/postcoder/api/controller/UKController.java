@@ -1,7 +1,7 @@
-package com.fexco.postcode.controller;
+package com.fexco.postcoder.api.controller;
 
-import com.fexco.postcode.constant.PostCoderEndpoint;
-import com.fexco.postcode.service.UKService;
+import com.fexco.postcoder.api.constant.PostCoderEndpoint;
+import com.fexco.postcoder.api.service.UKService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

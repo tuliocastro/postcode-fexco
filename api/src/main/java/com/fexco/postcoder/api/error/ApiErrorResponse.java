@@ -1,4 +1,4 @@
-package com.fexco.postcode.base.error;
+package com.fexco.postcoder.api.error;
 
 public class ApiErrorResponse {
 

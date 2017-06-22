@@ -1,4 +1,4 @@
-package com.fexco.postcode.util;
+package com.fexco.postcoder.api.util;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
