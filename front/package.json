@@ -10,9 +10,12 @@
     "build": "gulp build",
     "serve": "http-server -p 8090 -c-1 www/",
     "dev": "concurrently --kill-others \"npm run serve\" \"gulp dev\"",
-    "dist": "gulp dist"
+    "dist": "gulp dist",
+    "test": "karma start karma.conf.js",
+    "protractor": "protractor tests/e2e/protractor.conf.js"
   },
   "devDependencies": {
+    "angular-mocks": "^1.6.4",
     "app-root-path": "^2.0.1",
     "concurrently": "^3.1.0",
     "del": "^2.2.2",
@@ -30,8 +33,15 @@
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
     "gutil": "^1.6.4",
-    "live-reload": "^1.1.0",
     "http-server": "^0.9.0",
+    "jasmine-core": "^2.6.4",
+    "jasmine-node": "^1.14.5",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-jasmine": "^1.1.0",
+    "karma-junit-reporter": "^0.4.1",
+    "live-reload": "^1.1.0",
     "path": "^0.12.7",
     "require-dir": "^0.3.1",
     "run-sequence": "^1.2.2",
@@ -39,12 +49,12 @@
   },
   "dependencies": {
     "angular": "^1.6.4",
+    "angular-growl-v2": "^0.7.5",
     "angular-local-storage": "^0.5.0",
     "angular-ui-router": "^1.0.0-beta.1",
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
-    "ngsticky": "^1.7.12",
-    "angular-growl-v2": "^0.7.5"
+    "ngsticky": "^1.7.12"
   }
 }

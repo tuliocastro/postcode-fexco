@@ -4,4 +4,4 @@
 	
 #run
 
-	docker run --name redis -p 6379:6379 -d tuliocastro/redis
+	docker run --name redisdev -p 6379:6379 postcoder/redis

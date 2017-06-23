@@ -1,12 +1,14 @@
 package com.fexco.postcoder.api.consumer;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
 import java.util.Map;
 
+@Component
 public class ResponseEntityConsumer {
 
     public ResponseEntity<String> doGET(String url, Map<String, String> params) {
