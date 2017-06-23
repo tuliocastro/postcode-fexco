@@ -18,10 +18,4 @@ public class PostCoderEndpoint {
         public static final String ADDRESS = "address/uk";
     }
 
-    public static String buildEndpoint(String... parts) {
-
-        return BASE + String.join("/", parts).replace("//", "/");
-
-    }
-
 }
