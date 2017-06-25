@@ -45,7 +45,7 @@ After these commands, the front project can be viewed at:
 > [http://localhost:8081](http://localhost:8081)
     
 
-[API_MODULE]: api/README.md
+[API_MODULE]: ./api/README.md
 [FRONT_MODULE]: front/README.md
 [CACHE_MODULE]: cache/README.md
 [JAVA_8]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
