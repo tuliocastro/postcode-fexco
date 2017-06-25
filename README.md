@@ -8,7 +8,7 @@ This project is used to search at Postcoder API for Ireland and UK addresses.
 
 The proprosal solution is divided in modules and micro services, with the same API options to garantee the maintenance of existing projects.
 
- - [API Module](API_MODULE) - Some explaining
+ - [API Module](api/README.md) - Some explaining
  - [Front Module](FRONT_MODULE) - Some explaining
  - [Cache Module](CACHE_MODULE) - Some explaining
 
@@ -45,7 +45,6 @@ After these commands, the front project can be viewed at:
 > [http://localhost:8081](http://localhost:8081)
     
 
-[API_MODULE]: ./api/README.md
 [FRONT_MODULE]: front/README.md
 [CACHE_MODULE]: cache/README.md
 [JAVA_8]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
