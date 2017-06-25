@@ -14,26 +14,27 @@ describe('Postcoder API Route', function () {
 
         browser.actions().sendKeys(protractor.Key.ENTER).perform();
 
-        browser.wait(1000);
+        // browser.wait(1000);
 
-        browser.waitForAngular();
+        // browser.waitForAngular();
 
     });
 
-
-    it('should see an alert info', function () {
-        expect(alertInfo.getText()).toContain('fill');
-    });
 
     it('should list results', function () {
 
-        //Select first option
-        element(by.model('ctrl.selectedLookup'))
-            .all(by.tagName('option'))
-            .get(1)
-            .click();
+        browser.waitForAngular();
 
-        element(by.model('field.value')).sendKeys('Adelaide Road')
+        //Select first option
+        var select = element(by.model('ctrl.selectedLookup'));
+        select.$('[label="Irish Address"]').click();
+
+            // .get(1)
+            // .click().then(function(res){
+            // console.log(res);
+        // });
+
+
 
 
     });

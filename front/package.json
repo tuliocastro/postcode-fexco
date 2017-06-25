@@ -12,7 +12,7 @@
     "dev": "concurrently --kill-others \"npm run serve\" \"gulp dev\"",
     "dist": "gulp dist",
     "test": "karma start karma.conf.js",
-    "protractor": "protractor tests/e2e/protractor.conf.js"
+    "protractor": "protractor protractor.conf.js"
   },
   "devDependencies": {
     "angular-mocks": "^1.6.4",
@@ -34,13 +34,6 @@
     "gulp-util": "^3.0.7",
     "gutil": "^1.6.4",
     "http-server": "^0.9.0",
-    "jasmine-core": "^2.6.4",
-    "jasmine-node": "^1.14.5",
-    "karma": "^1.7.0",
-    "karma-chrome-launcher": "^0.2.3",
-    "karma-firefox-launcher": "^0.1.7",
-    "karma-jasmine": "^1.1.0",
-    "karma-junit-reporter": "^0.4.1",
     "live-reload": "^1.1.0",
     "path": "^0.12.7",
     "require-dir": "^0.3.1",

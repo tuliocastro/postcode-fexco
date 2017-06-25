@@ -4,6 +4,7 @@ describe('Postcoder API Route', function () {
     beforeEach(function () {
 
         browser.get('http://localhost:8090/#!/postcoder/api');
+        browser.refresh()
 
     });
 
@@ -13,6 +14,7 @@ describe('Postcoder API Route', function () {
         var inputAPI = element(by.model('ctrl.apiKey'));
 
         expect(inputAPI.isPresent()).toBe(false);
+
     });
 
 });
