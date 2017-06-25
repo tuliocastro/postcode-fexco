@@ -8,13 +8,20 @@ This project is used to search at Postcoder API for Ireland and UK addresses.
 
 The proprosal solution is divided in modules and micro services, with the same API options to garantee the maintenance of existing projects.
 
- - [API Module](api/README.md) - Some explaining
- - [Front Module](FRONT_MODULE) - Some explaining
- - [Cache Module](CACHE_MODULE) - Some explaining
+ - [API Module](api/README.md) - This module is responsible to communicate with 3rd API (Postcoder) caching all repeated results in redis cache.
+ - [Front Module](front/README.md)  - This module is responsible by the front api to Test and see the results with a graphical way.
+ - [Cache Module](redis/README.md)  - To avoid extra costs, all the repeated requests are stored in a Redis server. And this cache has to be available after server restart.
 
+<img align="center" src="readme-files/main-flow.png" height="300" alt="Architecture-img">
+
+### Development Tools
+
+- [IntelliJ](https://www.jetbrains.com/idea/)
+- [Git Flow](https://danielkummer.github.io/git-flow-cheatsheet/index.html): Used to branch development flow.
+- [GitHub Project](https://github.com/tuliocastro/postcode-fexco/projects) - To organize project tasks in a kanban way.
 
 ### How to Start the Environment
-All modules is ready to run, with a few commands your environment is ready to go.
+All modules is ready to run using docker images.
 
 #### Requirements
 - [Java 8](JAVA_8)
