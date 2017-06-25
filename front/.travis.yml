@@ -2,4 +2,5 @@ language: node_js
 jdk:
   - oraclejdk8
 sudo: false
+before_script: cd front
 script: npm install && npm run build
