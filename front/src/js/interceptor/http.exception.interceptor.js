@@ -9,10 +9,14 @@
 
             responseError: function (response) {
 
+                if (response.status < 0) {
+                    $injector.get('growl').error("Server API is not responding...");
+                    return $q.reject(response);
+                }
+
                 var data = response.data;
 
                 if (response.status !== 200 && data && data.message) {
-                    console.log('show growl');
                     $injector.get('growl').error(data.message);
                 }
 
