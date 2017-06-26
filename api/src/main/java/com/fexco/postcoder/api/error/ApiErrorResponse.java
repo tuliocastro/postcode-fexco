@@ -1,5 +1,8 @@
 package com.fexco.postcoder.api.error;
 
+/**
+ * Default class to response with errors message
+ */
 public class ApiErrorResponse {
 
     public int statusCode;

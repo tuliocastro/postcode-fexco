@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
+/**
+ * UK Rest Controller
+ */
 @RestController
 @CrossOrigin(origins = "*")
 public class UKController {
@@ -14,6 +17,16 @@ public class UKController {
     @Autowired
     UKService ukService;
 
+    /**
+     * Full premise-level address lookup
+     * <p>
+     * Lookup: /api/address/uk/query?params
+     *
+     * @param apiKey
+     * @param query
+     * @param mapParams
+     * @return
+     */
     @GetMapping(value = "{apiKey}/" + PostCoderEndpoint.UK.ADDRESS + "/{query}")
     public String findAddress(@PathVariable String apiKey, @PathVariable String query, @RequestParam Map<String, String> mapParams) {
 

@@ -8,6 +8,9 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 
 import javax.validation.ConstraintViolationException;
 
+/**
+ * Interceptor of Exceptions to handle with errors.
+ */
 @RestControllerAdvice
 public class GlobalHttpExceptionHandler {
 
