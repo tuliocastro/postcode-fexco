@@ -1,3 +1,4 @@
+
 # FEXCO Postcoder REDIS Cache Module
 
 This module is used to num the memory database REDIS. This prevents access to the 3rd API if the results was alredy used by any API-KEY.

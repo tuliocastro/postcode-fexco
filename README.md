@@ -14,6 +14,7 @@ The proprosal solution is divided in modules and micro services, with the same A
 
 <img align="center" src="readme-files/main-flow.png" height="300" alt="Architecture-img">
 
+
 ### Development Tools
 
 - [IntelliJ](https://www.jetbrains.com/idea/)
@@ -24,10 +25,10 @@ The proprosal solution is divided in modules and micro services, with the same A
 All modules is ready to run using docker images.
 
 #### Requirements
-- [Java 8](JAVA_8)
-- [Docker](DOCKER)
+- [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+- [Docker](https://docs.docker.com/engine/installation/)
 
-> Docker host has to be set and daemon exposed. [Read more ...](DOCKER_DAEMON_READ_MORE)
+> Docker host has to be set and daemon exposed. [Read more ...](https://docs.docker.com/engine/reference/commandline/dockerd/#bind-docker-to-another-hostport-or-a-unix-socket)
 
 
 #### Building API Image
@@ -54,10 +55,4 @@ After these commands, the front project can be viewed at:
 The API Module is running at:
 
 > [http://localhost:8080](http://localhost:8080)
-    
-
-[FRONT_MODULE]: front/README.md
-[CACHE_MODULE]: cache/README.md
-[JAVA_8]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
-[DOCKER]: https://docs.docker.com/engine/installation/
-[DOCKER_DAEMON_READ_MORE]: https://docs.docker.com/engine/reference/commandline/dockerd/#bind-docker-to-another-hostport-or-a-unix-socket
+   

@@ -1,4 +1,3 @@
-
 # FEXCO Postcoder Front Module
 
 This module provides a graphical way to test the API selecting the lookup, quey and passing optional parameters.
