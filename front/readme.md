@@ -49,6 +49,12 @@ This command will watch for changes building the project automatically.
 
     $ npm run dev
     
+#### Distribute
+
+Runs build and create the build folder which distribute to production
+
+    $ npm run dist
+    
 #### Karma Tests
 
     $ npm run test

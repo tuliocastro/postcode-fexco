@@ -20,6 +20,7 @@
         ctrl.filter = filter;
         ctrl.nextPage = nextPage;
         ctrl.previousPage = previousPage;
+        ctrl.reset = reset;
 
         function filter() {
 
@@ -59,6 +60,7 @@
 
             ctrl.selectedLookup.execute(ctrl.params).then(function (res) {
 
+                console.log(res);
                 ctrl.addresses = res.data;
 
                 setPagination();
