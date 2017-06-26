@@ -58,4 +58,4 @@ The API Module is running at:
    
  #### API Key example:
  
-    PCWL6-NGHYB-8WMPH-K9X5B
+    PCWJJ-VB4S2-DK55G-TM5SS
