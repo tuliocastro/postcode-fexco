@@ -13,6 +13,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
+/**
+ * UK Service responsible to cache repeated requests (Ignoring api key) and consumes 3rd api when it's not cached.
+ */
 @Service
 public class UKService {
 
@@ -21,6 +24,14 @@ public class UKService {
     @Autowired
     private ResponseEntityConsumer responseEntityConsumer;
 
+    /**
+     * Returns full UK addresses for a postcode
+     *
+     * @param apiKey
+     * @param query
+     * @param params
+     * @return
+     */
     @Cacheable(value = PostCoderCache.UK.ADDRESS, key = "{#query, #params}")
     public String findAdresses(String apiKey, String query, Map<String, String> params) {
 

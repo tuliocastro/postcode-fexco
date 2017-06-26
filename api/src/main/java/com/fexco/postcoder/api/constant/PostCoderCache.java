@@ -1,5 +1,8 @@
 package com.fexco.postcoder.api.constant;
 
+/**
+ * Constant class to store the names of each cache table.
+ */
 public class PostCoderCache {
 
     public static class UK {

@@ -7,6 +7,12 @@ public class HttpUtil {
 
     private static final String PATH_SEPARATOR = "/";
 
+    /**
+     * Transform a string array into a valid url path
+     *
+     * @param parts
+     * @return url path
+     */
     public static String toURL(String... parts) {
 
         if (parts == null) {
@@ -17,10 +23,14 @@ public class HttpUtil {
                 .map(part -> part == null ? part = "" : part)
                 .collect(Collectors.joining(PATH_SEPARATOR));
 
-//        return String.join(PATH_SEPARATOR, parts);
-
     }
 
+    /**
+     * Transform a string array into an abstract url (it means that starts with slash: "/" )
+     *
+     * @param parts
+     * @return url path
+     */
     public static String toAbstractURL(String... parts) {
 
         if (parts == null) {
@@ -32,11 +42,6 @@ public class HttpUtil {
         if (!firstPart.startsWith("http://") && !firstPart.startsWith("https://")) {
             parts[0] = PATH_SEPARATOR + firstPart;
         }
-
-//        String lastPart = parts[parts.length - 1];
-//        if (!lastPart.endsWith(PATH_SEPARATOR)) {
-//            parts[parts.length - 1] = lastPart + PATH_SEPARATOR;
-//        }
 
         return toURL(parts);
 
