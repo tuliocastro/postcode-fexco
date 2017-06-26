@@ -56,3 +56,6 @@ The API Module is running at:
 
 > [http://localhost:8080](http://localhost:8080)
    
+ #### API Key example:
+ 
+    PCWL6-NGHYB-8WMPH-K9X5B
