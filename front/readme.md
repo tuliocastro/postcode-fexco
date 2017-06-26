@@ -63,4 +63,8 @@ Runs build and create the build folder which distribute to production
 
     $ npm run protractor
     
-
+#### Coverage Tests:
+    
+    Running tests will generate a coverage folder.
+    
+    $ npm run test
