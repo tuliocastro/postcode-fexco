@@ -2,7 +2,7 @@
 
     angular.module(CONSTANTS.APP).controller('PostcoderAPICtrl', Controller);
 
-    function Controller($window, _lookups) {
+    function Controller(growl, $window, _lookups) {
 
         var ctrl = this;
 
@@ -60,12 +60,9 @@
 
             ctrl.selectedLookup.execute(ctrl.params).then(function (res) {
 
-                console.log(res);
                 ctrl.addresses = res.data;
 
                 setPagination();
-
-            }, function (err) {
 
             });
         }
