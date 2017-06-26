@@ -3,12 +3,14 @@ describe('Configuration Route', function () {
 
     const API_KEY_TEST = "PCW45-12345-12345-1234X";
 
+    const HOST = 'http://localhost:8081/';
+
     var inputApiKey = element(by.model('ctrl.apiKey'));
     var resetButton = element(by.css('.btn.btn-default'));
     var submitButton = element(by.css('.btn.btn-success'));
 
     beforeEach(function () {
-        browser.get('http://localhost:8090/');
+        browser.get(HOST);
     });
 
     it('should add an API-KEY', function () {
@@ -28,7 +30,7 @@ describe('Configuration Route', function () {
 
         browser.actions().sendKeys(protractor.Key.ENTER).perform().then(function () {
 
-            expect(browser.driver.getCurrentUrl()).toEqual("http://localhost:8090/#!/postcoder/api");
+            expect(browser.driver.getCurrentUrl()).toEqual(HOST + "#!/postcoder/api");
 
         });
 
@@ -41,7 +43,7 @@ describe('Configuration Route', function () {
 
         submitButton.click().then(function () {
 
-            expect(browser.driver.getCurrentUrl()).toEqual("http://localhost:8090/#!/postcoder/api");
+            expect(browser.driver.getCurrentUrl()).toEqual(HOST + "#!/postcoder/api");
 
         });
 

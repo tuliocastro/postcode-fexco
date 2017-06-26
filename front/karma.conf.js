@@ -24,6 +24,8 @@ module.exports = function (config) {
 
         browsers: ['PhantomJS'],
 
+        singleRun: true,
+
         // web server port
         port: 9876,
 
