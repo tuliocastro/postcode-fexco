@@ -1,4 +1,4 @@
 cache:
   redis:
-    hostname: localhost
+    hostname: rediscache
     port: 6379
