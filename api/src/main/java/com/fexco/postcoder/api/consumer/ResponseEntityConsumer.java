@@ -8,6 +8,10 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.net.URI;
 import java.util.Map;
 
+/**
+ * Component Class to help doing with HTTP Methods,
+ * encoding a Map of String into URL Parameters.
+ */
 @Component
 public class ResponseEntityConsumer {
 

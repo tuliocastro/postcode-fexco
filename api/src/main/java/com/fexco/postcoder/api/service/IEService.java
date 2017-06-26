@@ -13,6 +13,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
+/**
+ * IE Service responsible to cache repeated requests (Ignoring api key) and consumes 3rd api when it's not cached.
+ */
 @Service
 public class IEService {
 
@@ -21,6 +24,16 @@ public class IEService {
     @Autowired
     private ResponseEntityConsumer responseEntityConsumer;
 
+    /**
+     * Irish address -
+     * Perform an address lookup using an Eircode or address fragment
+     * Caching by query and params
+     *
+     * @param apiKey
+     * @param query
+     * @param params
+     * @return json with address found
+     */
     @Cacheable(value = PostCoderCache.IE.ADDRESS, key = "{#query, #params}")
     public String findAdresses(String apiKey, String query, Map<String, String> params) {
 
@@ -34,6 +47,16 @@ public class IEService {
 
     }
 
+    /**
+     * Irish address and coordinate lookup -
+     * Perform an address and coordinate lookup using an Eircode or address fragment
+     * Caching by query and params
+     *
+     * @param apiKey
+     * @param query
+     * @param params
+     * @return json with address found
+     */
     @Cacheable(value = PostCoderCache.IE.ADDRESS_GEO, key = "{#query, #params}")
     public String findAdressGeo(String apiKey, String query, Map<String, String> params) {
 
@@ -47,7 +70,15 @@ public class IEService {
 
     }
 
-
+    /**
+     * Coordinate lookup - Perform a coordinate lookup using an Eircode
+     * Caching by query and params
+     *
+     * @param apiKey
+     * @param query
+     * @param params
+     * @return json with address found
+     */
     @Cacheable(value = PostCoderCache.IE.POSITION, key = "{#query, #params}")
     public String findPosition(String apiKey, String query, Map<String, String> params) {
 
@@ -60,6 +91,17 @@ public class IEService {
         return response.getBody();
     }
 
+    /**
+     * Reverse geocode coordinates to an Irish address -
+     * Return an address from its latitude and longitude
+     * Caching by query and params
+     *
+     * @param apiKey
+     * @param latitude
+     * @param longitude
+     * @param params
+     * @return json with address found
+     */
     @Cacheable(value = PostCoderCache.IE.RGEO, key = "{#query, #params}")
     public String findRGeo(String apiKey, String latitude, String longitude, Map<String, String> params) {
 

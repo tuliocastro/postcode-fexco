@@ -10,6 +10,9 @@ import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 
+/**
+ * Configure spring boot cache to use Redis data base.
+ */
 @Configuration
 public class RedisCacheConfiguration extends CachingConfigurerSupport {
 
