@@ -67,3 +67,7 @@ Runs build and create the build folder which distribute to production
     Running tests will generate a coverage folder.
     
     $ npm run test
+
+#### API Key Example:
+
+    PCWL6-NGHYB-8WMPH-K9X5B
