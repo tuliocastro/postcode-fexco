@@ -26,7 +26,7 @@ public class IEController {
      * @param apiKey
      * @param query
      * @param params
-     * @return
+     * @return json with address found
      */
     @GetMapping(value = "{apiKey}/" + PostCoderEndpoint.IE.ADDRESS + "/{query}")
     public String findAddress(@PathVariable String apiKey, @PathVariable String query, @RequestParam Map<String, String> params) {
@@ -44,7 +44,7 @@ public class IEController {
      * @param apiKey
      * @param query
      * @param params
-     * @return
+     * @return json with address found
      */
     @GetMapping(value = "{apiKey}/" + PostCoderEndpoint.IE.ADDRESSGEO + "/{query}")
     public String findAddressGeo(@PathVariable String apiKey, @PathVariable String query, @RequestParam Map<String, String> params) {
@@ -61,7 +61,7 @@ public class IEController {
      * @param apiKey
      * @param query
      * @param params
-     * @return
+     * @return json with address found
      */
     @GetMapping(value = "{apiKey}/" + PostCoderEndpoint.IE.POSITION + "/{query}")
     public String findPosition(@PathVariable String apiKey, @PathVariable String query, @RequestParam Map<String, String> params) {
@@ -80,7 +80,7 @@ public class IEController {
      * @param latitude
      * @param longitude
      * @param params
-     * @return
+     * @return json with address found
      */
     @GetMapping(value = "{apiKey}/" + PostCoderEndpoint.IE.RGEO + "/{latitude:.+}/{longitude:.+}")
     public String findReverseGeo(@PathVariable String apiKey, @PathVariable String latitude, @PathVariable String longitude, @RequestParam Map<String, String> params) {

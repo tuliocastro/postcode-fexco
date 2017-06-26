@@ -25,7 +25,7 @@ public class UKController {
      * @param apiKey
      * @param query
      * @param mapParams
-     * @return
+     * @return json with address found
      */
     @GetMapping(value = "{apiKey}/" + PostCoderEndpoint.UK.ADDRESS + "/{query}")
     public String findAddress(@PathVariable String apiKey, @PathVariable String query, @RequestParam Map<String, String> mapParams) {

@@ -11,7 +11,7 @@ public class HttpUtil {
      * Transform a string array into a valid url path
      *
      * @param parts
-     * @return
+     * @return url path
      */
     public static String toURL(String... parts) {
 
@@ -29,7 +29,7 @@ public class HttpUtil {
      * Transform a string array into an abstract url (it means that starts with slash: "/" )
      *
      * @param parts
-     * @return
+     * @return url path
      */
     public static String toAbstractURL(String... parts) {
 

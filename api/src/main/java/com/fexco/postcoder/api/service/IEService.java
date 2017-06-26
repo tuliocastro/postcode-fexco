@@ -32,7 +32,7 @@ public class IEService {
      * @param apiKey
      * @param query
      * @param params
-     * @return
+     * @return json with address found
      */
     @Cacheable(value = PostCoderCache.IE.ADDRESS, key = "{#query, #params}")
     public String findAdresses(String apiKey, String query, Map<String, String> params) {
@@ -55,7 +55,7 @@ public class IEService {
      * @param apiKey
      * @param query
      * @param params
-     * @return
+     * @return json with address found
      */
     @Cacheable(value = PostCoderCache.IE.ADDRESS_GEO, key = "{#query, #params}")
     public String findAdressGeo(String apiKey, String query, Map<String, String> params) {
@@ -77,7 +77,7 @@ public class IEService {
      * @param apiKey
      * @param query
      * @param params
-     * @return
+     * @return json with address found
      */
     @Cacheable(value = PostCoderCache.IE.POSITION, key = "{#query, #params}")
     public String findPosition(String apiKey, String query, Map<String, String> params) {
@@ -100,7 +100,7 @@ public class IEService {
      * @param latitude
      * @param longitude
      * @param params
-     * @return
+     * @return json with address found
      */
     @Cacheable(value = PostCoderCache.IE.RGEO, key = "{#query, #params}")
     public String findRGeo(String apiKey, String latitude, String longitude, Map<String, String> params) {
