@@ -1,32 +1,34 @@
 module.exports = function (config) {
     config.set({
 
-        basePath: './app',
+        basePath: '',
 
         files: [
-            'node_modules/angular/angular.js',
+
+            "node_modules/jquery/dist/jquery.min.js",
+            "node_modules/bootstrap/dist/js/bootstrap.min.js",
+            "node_modules/angular/angular.min.js",
+            "node_modules/angular-ui-router/release/angular-ui-router.min.js",
+            "node_modules/angular-local-storage/dist/angular-local-storage.js",
+            "node_modules/ngsticky/dist/sticky.min.js",
+            "node_modules/angular-growl-v2/build/angular-growl.js",
             'node_modules/angular-mocks/angular-mocks.js',
+            'src/js/main.js',
             'src/js/**/*.js',
-            'src/test/unit/**/*.js'
+            'test/unit/**/*.js'
         ],
 
         autoWatch: true,
 
-        frameworks: ['jasmine'],
+        frameworks: ['mocha', 'chai'],
 
-        browsers: ['Chrome'],
+        browsers: ['PhantomJS'],
 
-        plugins: [
-            'karma-chrome-launcher',
-            'karma-firefox-launcher',
-            'karma-jasmine',
-            'karma-junit-reporter'
-        ],
+        // web server port
+        port: 9876,
 
-        junitReporter: {
-            outputFile: 'test_out/unit.xml',
-            suite: 'unit'
-        }
+        reporters: ['progress', 'coverage'],
+        preprocessors: { 'src/js/**/*.js': ['coverage'] }
 
     });
 };
