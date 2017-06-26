@@ -1,9 +1,11 @@
 // spec.js
 describe('Postcoder API Route', function () {
 
+    const HOST = 'http://localhost:8081/';
+
     beforeEach(function () {
 
-        browser.get('http://localhost:8090/#!/postcoder/api');
+        browser.get(HOST+'#!/postcoder/api');
         browser.refresh()
 
     });

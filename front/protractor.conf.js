@@ -10,7 +10,7 @@ exports.config = {
         'browserName': 'chrome'
     },
 
-    baseUrl: 'http://localhost:8090/',
+    baseUrl: 'http://localhost:8081/', //TODO Recover from package.json
 
     framework: 'jasmine2',
 
