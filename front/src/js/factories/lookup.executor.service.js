@@ -48,8 +48,8 @@
             {
                 name: 'Irish Reverse geocode coordinates',
                 fields: [
-                    {label: "Latitude", value: '53.332067', required: true, grid: 'col-xs-6'},
-                    {label: "Longitude", value: '-6.255492', required: false, grid: 'col-xs-6'}
+                    {label: "Latitude", value: '', required: true, grid: 'col-xs-6'},
+                    {label: "Longitude", value: '', required: false, grid: 'col-xs-6'}
                 ],
                 execute: function (params) {
 

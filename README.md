@@ -36,7 +36,7 @@ First we need to build and create the API Docker Image
 
     (cd api/ ; ./mvnw clean package docker:build) //Unix
     
-    "api/mvnw clean package docker:build" //Windows
+    cd api && mvnw clean package docker:build //Windows
     
     
 #### Running project (all modules)
@@ -49,7 +49,11 @@ Then, the other two modules is already ready to run, the docker compose will get
 
 After these commands, the front project can be viewed at:
 
-> [http://localhost:8081](http://localhost:8081)
+> [http://localhost:80](http://localhost:80)
+
+The API Module is running at:
+
+> [http://localhost:8080](http://localhost:8080)
     
 
 [FRONT_MODULE]: front/README.md
