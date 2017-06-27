@@ -70,4 +70,4 @@ Runs build and create the build folder which distribute to production
 
 #### API Key Example:
 
-    PCWL6-NGHYB-8WMPH-K9X5B
+    PCWJJ-VB4S2-DK55G-TM5SS

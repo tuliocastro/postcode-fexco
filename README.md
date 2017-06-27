@@ -52,7 +52,10 @@ After these commands, the front project can be viewed at:
 
 > [http://localhost:80](http://localhost:80)
 
-The API Module is running at:
+The API Module for services is running at:
 
-> [http://localhost:8080](http://localhost:8080)
+> [http://localhost:8080/...](http://localhost:8080)
    
+ #### API Key example:
+ 
+    PCWJJ-VB4S2-DK55G-TM5SS
