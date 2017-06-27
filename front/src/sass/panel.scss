@@ -90,3 +90,13 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+
+  .panel[sticky=""] {
+    position: relative !important;
+    top: inherit !important;
+    left: inherit !important;
+  }
+
+}
